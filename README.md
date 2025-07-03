@@ -6,6 +6,8 @@
 A professional, production-ready SaaS app built with Next.js App Router, TypeScript, and Tailwind CSS. Designed specifically for Spanish-speaking users, this app allows anyone to download high-resolution YouTube video thumbnails easily, quickly, and for free.
 
 ---
+## Preview
+![Live Preview](/o2.png)  
 
 ## 🎨 Features
 
