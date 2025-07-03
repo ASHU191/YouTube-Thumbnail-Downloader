@@ -3,8 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Download, Search, ImageIcon, User, Crop, ChevronDown } from "lucide-react"
+import { Download, Search, ImageIcon, User, Crop } from "lucide-react"
 import Image from "next/image"
 
 interface ThumbnailSizes {
@@ -113,52 +112,19 @@ export default function MainThumbnailViewer({ thumbnailSizes, mainThumbnail, onD
           <CardTitle className="text-lg text-center">Descargar por Tamaño</CardTitle>
         </CardHeader>
         <CardContent>
-          {/* Desktop View - Buttons in Row */}
-          <div className="hidden sm:flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center">
             {sizeOptions.map((option) => (
               <Button
                 key={option.key}
                 variant="outline"
-                className="flex-1 min-w-0 p-3 flex flex-col items-center space-y-1 bg-transparent text-xs"
+                className="flex items-center gap-2 px-4 py-2 bg-transparent"
                 onClick={() => onDownload(thumbnailSizes[option.key as keyof ThumbnailSizes], `youtube-${option.key}`)}
                 disabled={imageError}
               >
                 <Download className="h-4 w-4" />
-                <div className="text-center">
-                  <div className="font-semibold">{option.label}</div>
-                  <div className="text-xs text-gray-500">{option.size}</div>
-                </div>
+                {option.label}
               </Button>
             ))}
-          </div>
-
-          {/* Mobile View - Dropdown */}
-          <div className="sm:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="w-full justify-between bg-transparent" disabled={imageError}>
-                  <div className="flex items-center">
-                    <Download className="h-4 w-4 mr-2" />
-                    Seleccionar Tamaño
-                  </div>
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-full">
-                {sizeOptions.map((option) => (
-                  <DropdownMenuItem
-                    key={option.key}
-                    onClick={() =>
-                      onDownload(thumbnailSizes[option.key as keyof ThumbnailSizes], `youtube-${option.key}`)
-                    }
-                    className="flex flex-col items-start p-3"
-                  >
-                    <div className="font-semibold">{option.label}</div>
-                    <div className="text-xs text-gray-500">{option.size}</div>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
         </CardContent>
       </Card>
