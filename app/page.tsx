@@ -11,6 +11,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Download, Search, Youtube, AlertCircle, Loader2 } from "lucide-react"
 import { extractVideoId, validateYouTubeUrl } from "@/lib/utils"
 import MainThumbnailViewer from "@/components/MainThumbnailViewer"
+import Image from "next/image"
 
 interface ThumbnailSizes {
   maxres: string
@@ -93,12 +94,34 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-red-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
-            <Youtube className="h-12 w-12 text-red-600 mr-3" />
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Descargador de Miniaturas</h1>
+        <div className="text-center mb-8 mt-8 relative">
+          {/* Logo positioned top-left on desktop */}
+          <div className="absolute top-0 left-0 hidden md:block">
+            <Image
+              src="/placeholder.svg?height=40&width=120"
+              alt="Logo"
+              width={120}
+              height={40}
+              className="object-contain"
+            />
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+
+          {/* Mobile logo - left aligned */}
+          <div className="text-left mb-4 md:hidden">
+            <Image
+              src="/placeholder.svg?height=32&width=100"
+              alt="Logo"
+              width={100}
+              height={32}
+              className="object-contain"
+            />
+          </div>
+
+          <div className="flex items-center justify-center mb-4">
+            <Youtube className="h-8 w-8 md:h-12 md:w-12 text-red-600 mr-2 md:mr-3" />
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white">Descargador de Miniaturas</h1>
+          </div>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             Obtén miniaturas de cualquier video de YouTube en alta resolución. Gratis, rápido y sin necesidad de
             registro.
           </p>
@@ -107,15 +130,15 @@ export default function HomePage() {
         {/* Main Form */}
         <Card className="max-w-2xl mx-auto mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <Search className="h-5 w-5 mr-2" />
+            <CardTitle className="flex items-center text-lg md:text-xl">
+              <Search className="h-4 w-4 md:h-5 md:w-5 mr-2" />
               Ingresa la URL del Video
             </CardTitle>
             <CardDescription>Pega la URL completa del video de YouTube para obtener sus miniaturas</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <Input
                   type="url"
                   placeholder="https://www.youtube.com/watch?v=..."
@@ -124,7 +147,7 @@ export default function HomePage() {
                   className="flex-1"
                   disabled={loading}
                 />
-                <Button type="submit" disabled={loading || !url.trim()}>
+                <Button type="submit" disabled={loading || !url.trim()} className="w-full sm:w-auto">
                   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Search className="h-4 w-4" />}
                   {loading ? "Procesando..." : "Buscar"}
                 </Button>
