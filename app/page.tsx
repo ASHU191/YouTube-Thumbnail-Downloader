@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Download, Search, Youtube, AlertCircle, Loader2 } from "lucide-react"
+import { Search, Youtube, AlertCircle, Loader2 } from "lucide-react"
 import { extractVideoId, validateYouTubeUrl } from "@/lib/utils"
 import MainThumbnailViewer from "@/components/MainThumbnailViewer"
 import Image from "next/image"
@@ -149,7 +149,7 @@ export default function HomePage() {
                 />
                 <Button type="submit" disabled={loading || !url.trim()} className="w-full sm:w-auto">
                   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Search className="h-4 w-4" />}
-                  {loading ? "Procesando..." : "Buscar"}
+                  {loading ? "Procesando..." : "Download Thumbnail"}
                 </Button>
               </div>
 
@@ -178,40 +178,6 @@ export default function HomePage() {
             />
           </div>
         )}
-
-        {/* Features Section */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
-            ¿Por qué elegir nuestro descargador?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-red-100 dark:bg-red-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Download className="h-8 w-8 text-red-600 dark:text-red-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Descarga Gratuita</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Descarga todas las miniaturas sin costo alguno y sin límites
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-red-100 dark:bg-red-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Youtube className="h-8 w-8 text-red-600 dark:text-red-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Alta Resolución</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Obtén miniaturas en la máxima calidad disponible (1280x720)
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-red-100 dark:bg-red-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Search className="h-8 w-8 text-red-600 dark:text-red-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fácil de Usar</h3>
-              <p className="text-gray-600 dark:text-gray-300">Solo pega la URL y obtén las miniaturas al instante</p>
-            </div>
-          </div>
-        </div>
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
