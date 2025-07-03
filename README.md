@@ -1,124 +1,64 @@
-# Descargador de Miniaturas de YouTube
+# 📸 YouTube Thumbnail Downloader (Spanish Edition)
 
-Una aplicación web moderna y gratuita para descargar miniaturas de videos de YouTube en alta resolución.
+[Live Demo 🚀](https://you-tube-thumbnail-downloader-pearl.vercel.app/)  
+[Repository 📂](https://github.com/ASHU191/YouTube-Thumbnail-Downloader)
 
-## 🚀 Características
-
-- **Descarga Gratuita**: Obtén miniaturas sin costo alguno
-- **Alta Resolución**: Miniaturas hasta 1280x720 píxeles
-- **Múltiples Calidades**: Maxres, HQ, MQ y SD
-- **Interfaz Intuitiva**: Diseño limpio y fácil de usar
-- **Responsive**: Funciona perfectamente en móviles y escritorio
-- **Sin Registro**: No necesitas crear cuenta
-
-## 🛠️ Tecnologías Utilizadas
-
-- **Next.js 14** - Framework de React con App Router
-- **TypeScript** - Tipado estático para JavaScript
-- **Tailwind CSS** - Framework de CSS utilitario
-- **shadcn/ui** - Componentes de UI modernos
-- **Lucide React** - Iconos SVG
-
-## 📦 Instalación
-
-1. Clona el repositorio:
-\`\`\`bash
-git clone https://github.com/tu-usuario/youtube-thumbnail-downloader.git
-cd youtube-thumbnail-downloader
-\`\`\`
-
-2. Instala las dependencias:
-\`\`\`bash
-npm install
-# o
-yarn install
-# o
-pnpm install
-\`\`\`
-
-3. Ejecuta el servidor de desarrollo:
-\`\`\`bash
-npm run dev
-# o
-yarn dev
-# o
-pnpm dev
-\`\`\`
-
-4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
-
-## 🚀 Despliegue en Vercel
-
-1. Haz fork de este repositorio
-2. Conecta tu repositorio con Vercel
-3. Despliega automáticamente
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tu-usuario/youtube-thumbnail-downloader)
-
-## 📁 Estructura del Proyecto
-
-\`\`\`
-├── app/
-│   ├── api/
-│   │   └── extract-thumbnail/
-│   │       └── route.ts
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── ui/
-│   └── ThumbnailCard.tsx
-├── lib/
-│   └── utils.ts
-├── public/
-│   └── robots.txt
-└── README.md
-\`\`\`
-
-## 🎯 Uso
-
-1. Copia la URL de cualquier video de YouTube
-2. Pégala en el campo de entrada
-3. Haz clic en "Buscar"
-4. Selecciona la calidad deseada
-5. Haz clic en "Descargar"
-
-## 🔧 Formatos de URL Soportados
-
-- `https://www.youtube.com/watch?v=VIDEO_ID`
-- `https://youtu.be/VIDEO_ID`
-- `https://www.youtube.com/embed/VIDEO_ID`
-- `https://www.youtube.com/v/VIDEO_ID`
-
-## 📱 Calidades Disponibles
-
-- **Máxima Resolución** (1280x720) - `maxresdefault.jpg`
-- **Alta Calidad** (480x360) - `hqdefault.jpg`
-- **Calidad Media** (320x180) - `mqdefault.jpg`
-- **Calidad Estándar** (640x480) - `sddefault.jpg`
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Haz fork del proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## ⚠️ Disclaimer
-
-Esta herramienta es independiente y no está afiliada con YouTube o Google. Respeta los términos de servicio de YouTube al usar las miniaturas descargadas.
-
-## 📞 Soporte
-
-Si tienes alguna pregunta o problema, por favor abre un issue en GitHub.
+A professional, production-ready SaaS app built with Next.js App Router, TypeScript, and Tailwind CSS. Designed specifically for Spanish-speaking users, this app allows anyone to download high-resolution YouTube video thumbnails easily, quickly, and for free.
 
 ---
 
-Hecho con ❤️ para la comunidad hispanohablante
+## 🎨 Features
+
+✅ **YouTube URL Input** – Enter any YouTube video URL  
+✅ **Automatic Video ID Extraction** – Supports multiple YouTube URL formats  
+✅ **Thumbnail Preview** – Large main thumbnail preview  
+✅ **Download Buttons** – Download thumbnails in multiple sizes:
+- 1280x720 (maxresdefault)
+- 480x360 (hqdefault)
+- 320x180 (mqdefault)
+✅ **Optional Formats** – Download banner/cover or profile picture versions  
+✅ **Google Lens Integration** – Search the thumbnail image on Google Lens with one click  
+✅ **Fully Responsive** – Works perfectly on mobile and desktop  
+✅ **Spanish UI & SEO** – All content and metadata are in Spanish  
+✅ **Clean UI** – Built with shadcn/ui and Lucide-react icons  
+✅ **Error & Loading States** – Smooth user experience with proper validations  
+✅ **Dark Mode Ready** – Dark/light toggle included  
+✅ **Vercel Ready** – Optimized for deployment on Vercel
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 14 App Router](https://nextjs.org/)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + shadcn/ui
+- **Icons:** lucide-react
+- **Validation:** zod
+- **SEO:** Open Graph & Twitter metadata for optimal sharing
+
+---
+
+## 🚀 SEO (in Spanish)
+
+- **Title:** Descargador de Miniaturas de YouTube en Alta Resolución
+- **Description:** Obtén miniaturas de cualquier video de YouTube en alta resolución. Gratis, rápido y sin necesidad de registro.
+- Includes canonical tag, Open Graph, Twitter cards, and robots.txt
+
+---
+
+## 🚦 How It Works
+
+1️⃣ User pastes a YouTube video URL  
+2️⃣ The app extracts the video ID and fetches all possible thumbnails  
+3️⃣ A large preview of the highest-quality thumbnail appears  
+4️⃣ Buttons below allow downloading in multiple resolutions or formats  
+5️⃣ Additional button lets users search the image on Google Lens  
+
+---
+
+## ⚙️ Setup & Development
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/ASHU191/YouTube-Thumbnail-Downloader.git
+   cd YouTube-Thumbnail-Downloader
